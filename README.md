@@ -17,9 +17,8 @@ This project outlines the development of an IoT-based energy meter using an ESP3
 - AC Voltage Sensor Module (ZMPT101B) ⚙️
 - Miscellaneous: Resistors, capacitors, connectors, and wiring 🛒
 
-- Circuit Diagram ⚙️
+## Circuit Diagram ⚙️
 Create the circuit as per the following guidelines:
-
 1. Connect the ACS712 current sensor to the ESP32 for current readings.
 2. Connect the ZMPT101B voltage sensor to the ESP32 for AC voltage readings.
 3. Connect the OLED display to the ESP32 using I2C (default pins: SDA - GPIO 21, SCL - GPIO 22).
