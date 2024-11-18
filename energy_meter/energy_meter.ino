@@ -3,6 +3,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+#define LED_PIN 3
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
@@ -20,6 +22,7 @@ float current_threshold=30.0;
 
 void setup() {
   pinMode(relay_pin, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
   Serial.begin(115200);                         /* In order to see value in serial monitor */
 
   while(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
@@ -33,6 +36,7 @@ void setup() {
 void loop() 
 
 {
+  digitalWrite(LED_PIN, HIGH);
   float current=read_current();
 
   if (current >= current_threshold){
@@ -40,7 +44,8 @@ void loop()
   }
 
 
-   
+  
+  digitalWrite(LED_PIN, LOW);
 }
 
 
